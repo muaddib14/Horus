@@ -13,21 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://horus.wealth.id"),
+  metadataBase: new URL("https://www.horusflow.xyz"),
   title: "HORUS — Live Order Flow Intelligence for Binance Futures",
   description:
     "Real-time delta, CVD, footprint, and divergence analysis directly on Binance Futures. Install once, trade smarter.",
   openGraph: {
     title: "HORUS",
     description: "Live order flow panel for Binance Futures traders",
-    url: "https://horus.wealth.id",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    url: "https://www.horusflow.xyz",
+    siteName: "HORUS",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "HORUS",
     description: "Order flow intelligence for Binance Futures",
-    images: ["/og-image.png"],
   },
 };
 
