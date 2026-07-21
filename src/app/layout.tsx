@@ -13,20 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://markintel.tech"),
-  title: "MARK — Read any repo. Find your next build.",
+  metadataBase: new URL("https://horus.wealth.id"),
+  title: "HORUS — Live Order Flow Intelligence for Binance Futures",
   description:
-    "Scan any GitHub repo in 30 seconds. Get a full intelligence report + 3 pump.fun-ready utility website ideas.",
+    "Real-time delta, CVD, footprint, and divergence analysis directly on Binance Futures. Install once, trade smarter.",
   openGraph: {
-    title: "MARK Intelligence",
-    description: "Scan any GitHub repo. Get 3 pump.fun-ready ideas.",
-    url: "https://markintel.tech",
+    title: "HORUS",
+    description: "Live order flow panel for Binance Futures traders",
+    url: "https://horus.wealth.id",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MARK Intelligence",
-    description: "Read any repo. Find your next build.",
+    title: "HORUS",
+    description: "Order flow intelligence for Binance Futures",
     images: ["/og-image.png"],
   },
 };
