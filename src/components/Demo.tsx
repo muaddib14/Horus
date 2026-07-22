@@ -70,11 +70,11 @@ function PanelPreview() {
         <div className="flex-1 flex flex-col gap-[8px]">
           <div
             className="text-[10px] font-mono px-2 py-1 rounded-sm flex items-center gap-[5px] transition-colors duration-500 tabular-nums"
-            style={{ color: deltaUp ? "var(--accent-text)" : "#b91c1c", background: deltaUp ? "var(--accent-bg)" : "rgba(185,28,28,0.08)" }}
+            style={{ color: deltaUp ? "var(--pos)" : "var(--neg)", background: deltaUp ? "rgba(22,163,74,0.08)" : "rgba(220,38,38,0.08)" }}
           >
             Δ Delta: {deltaUp ? "+" : ""}{delta.toLocaleString("en-US", { maximumFractionDigits: 2 })} BTC
           </div>
-          <div className="text-[10px] font-mono text-muted px-2 py-1 flex items-center gap-[5px] tabular-nums">
+          <div className="text-[10px] font-mono px-2 py-1 flex items-center gap-[5px] tabular-nums" style={{ color: cvd >= 0 ? "var(--pos)" : "var(--neg)" }}>
             📈 CVD: {cvd >= 0 ? "+" : ""}{cvd.toLocaleString("en-US", { maximumFractionDigits: 2 })}
           </div>
           <div className="text-[10px] font-mono text-muted px-2 py-1 flex items-center gap-[5px]">
@@ -170,18 +170,20 @@ function DeltaChart() {
                 className="w-full rounded-[1px] transition-all duration-500 ease-out"
                 style={{
                   height: `${(Math.abs(v) / max) * 100}%`,
-                  background: v >= 0 ? "var(--accent)" : "#ef4444",
+                  background: v >= 0 ? "var(--pos)" : "var(--neg)",
                   opacity: i === bars.length - 1 ? 1 : 0.75,
                 }}
               />
             </div>
           ))}
         </div>
-        <div className="font-mono text-[10.5px] leading-[1.9]" style={{ color: "var(--term-text)" }}>
+        <div className="font-mono text-[10.5px] leading-[1.9] tabular-nums" style={{ color: "var(--term-text)" }}>
           {log.map((entry, i) => (
             <div key={entry.t + i} style={{ opacity: 1 - i * 0.2 }}>
-              <span style={{ color: entry.v >= 0 ? "var(--term-green)" : "#ef4444" }}>›</span> {entry.t}:{" "}
-              {entry.v >= 0 ? "+" : ""}{entry.v.toFixed(2)} BTC {entry.v >= 0 ? "(buy)" : "(sell pressure)"}
+              <span style={{ color: entry.v >= 0 ? "var(--pos)" : "var(--neg)" }}>›</span> {entry.t}:{" "}
+              <span style={{ color: entry.v >= 0 ? "var(--pos)" : "var(--neg)" }}>
+                {entry.v >= 0 ? "+" : ""}{entry.v.toFixed(2)} BTC {entry.v >= 0 ? "(buy)" : "(sell pressure)"}
+              </span>
             </div>
           ))}
         </div>
@@ -227,12 +229,12 @@ function CVDLine() {
     <div className="card-elevated bg-paper rounded-card p-4 mb-3">
       <div className="flex items-center justify-between mb-2">
         <span className="text-[12px] font-semibold text-ink font-mono">CVD — cumulative delta</span>
-        <span className="text-[11px] font-mono tabular-nums" style={{ color: lastUp ? "var(--accent-text)" : "#ef4444" }}>
+        <span className="text-[11px] font-mono tabular-nums" style={{ color: lastUp ? "var(--pos)" : "var(--neg)" }}>
           {last >= 0 ? "+" : ""}{last.toFixed(2)}
         </span>
       </div>
       <svg viewBox={`0 0 ${w} ${h}`} width="100%" height={90} preserveAspectRatio="none" aria-hidden="true">
-        <polyline points={points} fill="none" stroke={lastUp ? "var(--accent)" : "#ef4444"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points={points} fill="none" stroke={lastUp ? "var(--pos)" : "var(--neg)"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   );
@@ -256,7 +258,7 @@ function CVDTracker() {
             <div className="flex items-center gap-2 mb-2">
               <span
                 className="text-[11px] font-mono px-[10px] py-[3px] rounded-sm flex items-center gap-[5px]"
-                style={{ background: div.type === "bearish" ? "rgba(239, 68, 68, 0.1)" : "rgba(34, 197, 94, 0.1)", color: div.type === "bearish" ? "#ef4444" : "#22c55e" }}
+                style={{ background: div.type === "bearish" ? "rgba(220,38,38,0.1)" : "rgba(22,163,74,0.1)", color: div.type === "bearish" ? "var(--neg)" : "var(--pos)" }}
               >
                 <span className="size-[5px] rounded-full" style={{ background: "currentColor", animation: "epblink 1.8s infinite" }} />
                 {div.type.toUpperCase()}
@@ -281,10 +283,10 @@ export default function Demo() {
     <section id="demo" data-screen-label="Demo" className="py-20 px-10 bg-paper">
       <div className="max-w-[1080px] mx-auto">
         <div className="flex flex-col items-center text-center mb-12" data-reveal>
-          <span className="inline-flex items-center gap-[6px] text-[11px] font-medium tracking-[.08em] uppercase text-muted bg-surface border border-border rounded-pill px-[14px] py-[5px] mb-4">
+          <span className="font-mono inline-flex items-center gap-[6px] text-[11px] font-medium tracking-[.14em] uppercase text-muted bg-surface border border-border rounded-pill px-[14px] py-[5px] mb-4">
             Live demo
           </span>
-          <h2 className="font-bold tracking-[-.03em] text-ink m-0 mb-3 leading-[1.1]" style={{ fontSize: "var(--text-h2)" }}>
+          <h2 className="font-mono font-semibold tracking-[-.01em] text-ink m-0 mb-3 leading-[1.1]" style={{ fontSize: "var(--text-h2)" }}>
             What you&apos;ll see
           </h2>
           <p className="text-[15px] text-muted leading-[1.65] max-w-[520px] m-0">
@@ -297,7 +299,7 @@ export default function Demo() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`text-[13px] font-medium px-5 py-2.5 rounded-md transition-colors whitespace-nowrap ${
+              className={`font-mono text-[13px] font-medium px-5 py-2.5 rounded-md transition-colors whitespace-nowrap ${
                 activeTab === tab
                   ? ""
                   : "bg-surface text-muted hover:bg-border hover:text-ink"

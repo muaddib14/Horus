@@ -21,10 +21,10 @@ export default function Process() {
     <section id="process" data-screen-label="Process" className="py-20 px-10 bg-surface border-t border-border border-b border-border">
       <div className="max-w-[1080px] mx-auto">
         <div className="flex flex-col items-center text-center mb-12" data-reveal>
-          <span className="inline-flex items-center gap-[6px] text-[11px] font-medium tracking-[.08em] uppercase text-muted bg-paper border border-border rounded-pill px-[14px] py-[5px] mb-4">
+          <span className="font-mono inline-flex items-center gap-[6px] text-[11px] font-medium tracking-[.14em] uppercase text-muted bg-paper border border-border rounded-pill px-[14px] py-[5px] mb-4">
             Getting started
           </span>
-          <h2 className="font-bold tracking-[-.03em] text-ink m-0 leading-[1.1]" style={{ fontSize: "var(--text-h2)" }}>
+          <h2 className="font-mono font-semibold tracking-[-.01em] text-ink m-0 leading-[1.1]" style={{ fontSize: "var(--text-h2)" }}>
             Three steps, one minute
           </h2>
         </div>
@@ -35,10 +35,7 @@ export default function Process() {
           />
           {STEPS.map((step) => (
             <div key={step.n} className="card-elevated relative bg-paper rounded-card px-7 py-8" data-reveal>
-              <div
-                className="text-[22px] font-bold tracking-[-.02em] mb-4 relative z-[1]"
-                style={{ color: "var(--accent-ink)", WebkitTextStroke: "0" }}
-              >
+              <div className="font-mono text-[22px] font-bold tracking-[-.02em] mb-4 relative z-[1] tabular-nums">
                 <span style={{ color: "var(--accent-text)" }}>{step.n}</span>
               </div>
               <div className="text-[16px] font-semibold text-ink mb-[6px]">{step.title}</div>

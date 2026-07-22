@@ -17,6 +17,9 @@
   --green-bg: #e9f5e9;
   --green-border: #b6deb9;
 
+  --pos: #16a34a;
+  --neg: #dc2626;
+
   --term-bg: #16150f;
   --term-text: #edece6;
   --term-dim: #555550;
@@ -54,6 +57,9 @@
   --color-green: var(--green);
   --color-green-bg: var(--green-bg);
   --color-green-border: var(--green-border);
+
+  --color-pos: var(--pos);
+  --color-neg: var(--neg);
 
   --color-term-bg: var(--term-bg);
   --color-term-text: var(--term-text);

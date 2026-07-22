@@ -24,7 +24,7 @@ export default function Nav() {
     >
       <div className="flex items-center gap-[10px]">
         <Image src="/logo.jpg" alt="HORUS logo" width={28} height={28} className="size-7 rounded-[7px] object-cover" />
-        <span className="text-[14px] font-bold tracking-[-.02em] text-ink">HORUS</span>
+        <span className="font-mono text-[14px] font-bold uppercase tracking-[.08em] text-ink">HORUS</span>
       </div>
       <div className="items-center gap-8 hidden md:flex">
         {LINKS.map((l) => (

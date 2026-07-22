@@ -20,7 +20,7 @@ export default function SkillsCTA() {
             <div className="text-[11px] font-mono font-medium tracking-[.14em] uppercase text-ink mb-[14px]">
               // Open Source
             </div>
-            <h2 className="font-bold tracking-[-.04em] text-ink m-0 leading-[1.05]" style={{ fontSize: "clamp(32px, 4.5vw, 48px)" }}>
+            <h2 className="font-mono font-semibold tracking-[-.01em] text-ink m-0 leading-[1.05]" style={{ fontSize: "clamp(32px, 4.5vw, 48px)" }}>
               Free. <em className="italic text-ink">No tracking.</em>
             </h2>
           </div>
@@ -43,7 +43,7 @@ export default function SkillsCTA() {
           {FEATURES.map((feature) => (
             <span
               key={feature}
-              className="text-[12px] font-medium px-[18px] py-2 rounded-pill bg-white border border-border text-[#555552]"
+              className="font-mono text-[11px] font-medium px-[18px] py-2 rounded-pill bg-white border border-border text-[#555552]"
             >
               {feature}
             </span>

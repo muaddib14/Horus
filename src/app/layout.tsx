@@ -28,6 +28,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HORUS",
     description: "Order flow intelligence for Binance Futures",
+    site: "@horusflow",
+    creator: "@horusflow",
   },
 };
 

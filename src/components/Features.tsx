@@ -82,13 +82,13 @@ export default function Features() {
     <section id="features" data-screen-label="Features" className="py-20 px-10 bg-paper">
       <div className="max-w-[1080px] mx-auto">
         <div className="flex flex-col items-center text-center mb-12" data-reveal>
-          <span className="inline-flex items-center gap-[8px] text-[11px] font-medium tracking-[.08em] uppercase text-muted bg-surface border border-border rounded-pill px-[14px] py-[5px] mb-4">
+          <span className="font-mono inline-flex items-center gap-[8px] text-[11px] font-medium tracking-[.14em] uppercase text-muted bg-surface border border-border rounded-pill px-[14px] py-[5px] mb-4">
             Core metrics
-            <span className="text-[10px] font-bold px-[7px] py-[1px] rounded-pill" style={{ background: "var(--accent)", color: "var(--accent-ink)" }}>
+            <span className="font-mono text-[10px] font-bold px-[7px] py-[1px] rounded-pill" style={{ background: "var(--accent)", color: "var(--accent-ink)" }}>
               6
             </span>
           </span>
-          <h2 className="font-bold tracking-[-.03em] text-ink m-0 mb-3 leading-[1.1]" style={{ fontSize: "var(--text-h2)" }}>
+          <h2 className="font-mono font-semibold tracking-[-.01em] text-ink m-0 mb-3 leading-[1.1]" style={{ fontSize: "var(--text-h2)" }}>
             Everything traders need
           </h2>
           <p className="text-[15px] text-muted leading-[1.65] max-w-[520px] m-0">

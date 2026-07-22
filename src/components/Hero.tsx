@@ -157,7 +157,7 @@ export default function Hero() {
 
       <div className="relative z-[2] flex flex-col items-center max-w-[840px] mx-auto">
         <div
-          className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[.1em] uppercase text-muted rounded-pill px-4 py-[6px] mb-7"
+          className="font-mono inline-flex items-center gap-2 text-[11px] font-medium tracking-[.14em] uppercase text-muted rounded-pill px-4 py-[6px] mb-7"
           style={{
             background: "rgba(247,246,243,.82)",
             border: ".5px solid var(--border)",
@@ -172,7 +172,7 @@ export default function Hero() {
           Chrome Extension · Live Trading · No Login
         </div>
 
-        <h1 className="font-bold tracking-[-.04em] leading-[1.04] text-ink m-0 mb-5 text-[clamp(40px,6vw,64px)]">
+        <h1 className="font-mono font-bold tracking-[-.02em] leading-[1.04] text-ink m-0 mb-5 text-[clamp(36px,5.5vw,64px)]">
           <span className="block" style={{ animation: "blurIn .7s cubic-bezier(.16,1,.3,1) 0.12s forwards", opacity: 0, filter: "blur(10px)", transform: "translateY(14px)" }}>
             Live order flow.
           </span>
@@ -268,7 +268,7 @@ export default function Hero() {
       >
         <div className="px-6 py-4 flex items-center justify-between" style={{ borderBottom: ".5px solid #F3F2EE" }}>
           <div>
-            <div className="text-[10px] font-medium tracking-[.1em] uppercase text-muted">Real-time dashboard</div>
+            <div className="font-mono text-[10px] font-medium tracking-[.14em] uppercase text-muted">Real-time dashboard</div>
             <div className="text-[14px] font-medium text-ink mt-[3px]">HORUS order-flow panel</div>
           </div>
           <span className="text-[10px] px-[10px] py-[3px] rounded-pill" style={{ background: "var(--accent-bg)", color: "var(--accent-text)", border: "1px solid var(--accent-border)" }}>
@@ -292,19 +292,19 @@ export default function Hero() {
                 <span className="size-[8px] rounded-full" style={{ background: "#2a2a28", animation: "epblink 1.8s infinite" }}></span>
               </div>
               <div style={{ color: "#a0a0a0", marginBottom: "8px" }}>HORUS · BTCUSDT</div>
-              <div className="tabular-nums" style={{ color: delta >= 0 ? "var(--accent)" : "#ef4444", marginBottom: "6px" }}>
+              <div className="tabular-nums" style={{ color: delta >= 0 ? "var(--pos)" : "var(--neg)", marginBottom: "6px" }}>
                 Δ {delta >= 0 ? "+" : ""}{delta.toLocaleString("en-US", { maximumFractionDigits: 2 })} BTC ({delta >= 0 ? "buy" : "sell"})
               </div>
-              <div className="tabular-nums" style={{ color: "#a0a0a0", marginBottom: "6px" }}>
+              <div className="tabular-nums" style={{ color: cvd >= 0 ? "var(--pos)" : "var(--neg)", marginBottom: "6px" }}>
                 CVD {cvd >= 0 ? "+" : ""}{cvd.toLocaleString("en-US", { maximumFractionDigits: 2 })}
               </div>
               <div className="tabular-nums" style={{ color: "#a0a0a0", marginBottom: "6px" }}>OI {oi.toFixed(1)}K</div>
-              <div style={{ color: "#fbbf24" }}>⚠ bearish divergence</div>
+              <div style={{ color: "var(--neg)" }}>⚠ bearish divergence</div>
             </div>
           </div>
           <div className="p-5 flex flex-col gap-4">
             <div>
-              <div className="text-[10px] font-medium tracking-[.1em] uppercase text-muted mb-[10px]">Data</div>
+              <div className="font-mono text-[10px] font-medium tracking-[.14em] uppercase text-muted mb-[10px]">Data</div>
               <div className="flex flex-col gap-[8px]">
                 <div className="flex justify-between">
                   <span className="text-[11px] font-mono text-muted">Platform</span>
