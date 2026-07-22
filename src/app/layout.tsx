@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.horusflow.xyz"),
-  title: "HORUS — Live Order Flow Intelligence for Binance Futures",
+  title: "HORUS — Live Order Flow Intelligence for Binance & TradingView",
   description:
-    "Real-time delta, CVD, footprint, and divergence analysis directly on Binance Futures. Install once, trade smarter.",
+    "Footprint-fused chart, CVD overlay, and a two-phase trap detector on Binance Futures and TradingView. Install once, trade smarter.",
   openGraph: {
     title: "HORUS",
-    description: "Live order flow panel for Binance Futures traders",
+    description: "Live order flow panel for Binance and TradingView traders",
     url: "https://www.horusflow.xyz",
     siteName: "HORUS",
     type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "HORUS",
-    description: "Order flow intelligence for Binance Futures",
+    description: "Order flow intelligence for Binance and TradingView",
     site: "@horusflow",
     creator: "@horusflow",
   },

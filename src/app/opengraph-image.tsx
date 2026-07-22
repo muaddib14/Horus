@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "HORUS — Live Order Flow Intelligence for Binance Futures";
+export const alt = "HORUS — Live Order Flow Intelligence for Binance & TradingView";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -64,16 +64,16 @@ export default async function OgImage() {
           >
             <span>Live order flow.</span>
             <span>
-              Trade smarter on <span style={{ color: "#d5f106" }}>Binance.</span>
+              Trade smarter on <span style={{ color: "#d5f106" }}>Binance & TradingView.</span>
             </span>
           </div>
           <div style={{ fontSize: 22, color: "#8a8784", maxWidth: 780 }}>
-            Real-time delta, CVD, footprint, and divergence detection — free Chrome extension.
+            Footprint-fused chart, CVD overlay, and a two-phase trap detector — free Chrome extension.
           </div>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 12, position: "relative" }}>
-          {["Delta", "CVD", "Footprint", "Divergence", "Open Interest"].map((tag) => (
+          {["Trap Detector", "Footprint", "CVD Overlay", "TradingView", "Binance"].map((tag) => (
             <div
               key={tag}
               style={{

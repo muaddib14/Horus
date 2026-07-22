@@ -169,7 +169,7 @@ export default function Hero() {
           }}
         >
           <span className="size-[7px] rounded-full" style={{ background: "var(--accent)" }} />
-          Chrome Extension · Live Trading · No Login
+          Chrome Extension · Binance + TradingView · No Login
         </div>
 
         <h1 className="font-mono font-bold tracking-[-.02em] leading-[1.04] text-ink m-0 mb-5 text-[clamp(36px,5.5vw,64px)]">
@@ -177,7 +177,7 @@ export default function Hero() {
             Live order flow.
           </span>
           <span className="block" style={{ animation: "blurIn .7s cubic-bezier(.16,1,.3,1) 0.36s forwards", opacity: 0, filter: "blur(10px)", transform: "translateY(14px)" }}>
-            Trade smarter on <span style={{ color: "var(--accent-text)" }}>Binance.</span>
+            Trade smarter on <span style={{ color: "var(--accent-text)" }}>Binance & TradingView.</span>
           </span>
         </h1>
 
@@ -185,7 +185,7 @@ export default function Hero() {
           className="text-[16px] text-muted leading-[1.7] max-w-[520px] m-0 mb-8"
           style={{ animation: "blurIn .7s cubic-bezier(.16,1,.3,1) .55s forwards", opacity: 0, filter: "blur(6px)", transform: "translateY(12px)" }}
         >
-          Real-time delta, CVD, footprint, and divergence detection. See trapped traders before the bounce. Synced companion panel on Binance Futures.
+          A footprint-fused chart with CVD overlaid on price, plus a trap detector that watches for OI rising into a swing extreme and confirms the squeeze when positions actually start closing. Synced companion panel on Binance and TradingView.
         </p>
 
         <div
@@ -251,7 +251,7 @@ export default function Hero() {
           <span className="size-1 rounded-full bg-muted"></span>
           <span>No account needed</span>
           <span className="size-1 rounded-full bg-muted"></span>
-          <span>Binance Futures only</span>
+          <span>Binance + TradingView</span>
         </div>
       </div>
 
@@ -299,7 +299,8 @@ export default function Hero() {
                 CVD {cvd >= 0 ? "+" : ""}{cvd.toLocaleString("en-US", { maximumFractionDigits: 2 })}
               </div>
               <div className="tabular-nums" style={{ color: "#a0a0a0", marginBottom: "6px" }}>OI {oi.toFixed(1)}K</div>
-              <div style={{ color: "var(--neg)" }}>⚠ bearish divergence</div>
+              <div style={{ color: "#f87171", marginBottom: "6px" }}>🪤 longs trapped @ 66,212.90 — forming</div>
+              <div style={{ color: "var(--term-dim)" }}># confirms when OI falls + delta flips</div>
             </div>
           </div>
           <div className="p-5 flex flex-col gap-4">
@@ -308,11 +309,15 @@ export default function Hero() {
               <div className="flex flex-col gap-[8px]">
                 <div className="flex justify-between">
                   <span className="text-[11px] font-mono text-muted">Platform</span>
-                  <span className="text-[10px] font-mono text-ink font-semibold">Binance</span>
+                  <span className="text-[10px] font-mono text-ink font-semibold">Binance + TradingView</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[11px] font-mono text-muted">Updates</span>
                   <span className="text-[10px] font-mono text-ink font-semibold">5s interval</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-[11px] font-mono text-muted">Backfill</span>
+                  <span className="text-[10px] font-mono text-ink font-semibold">On open</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[11px] font-mono text-muted">Auth</span>

@@ -7,38 +7,38 @@ type Feature = {
 
 const FEATURES: Feature[] = [
   {
-    title: "Delta tracking",
-    body: "Real-time buy/sell volume imbalance per minute. See aggressive buyer vs seller immediately.",
-    spark: [4, -2, 6, -3, 8, 3, -1, 7],
-    kind: "bar",
-  },
-  {
-    title: "CVD line chart",
-    body: "Cumulative delta over time. Watch money flow direction and divergence from price.",
-    spark: [2, 4, 5, 9, 8, 12, 15, 14],
+    title: "Trap detector",
+    body: "Two-phase signal: forms when OI rises into a swing extreme with rejection, confirms when OI actually falls and delta flips. False alarms drop silently, never reported.",
+    spark: [3, 4, 6, 9, 13, 8, 4, 2],
     kind: "line",
   },
   {
-    title: "Footprint table",
-    body: "Price-level breakdown of buy/sell volume. See which levels are being absorbed.",
+    title: "Footprint-fused chart",
+    body: "Buy/sell volume per price level, fused directly into each bar's body — not a separate table. Canvas-rendered, no charting library dependency.",
     spark: [3, 8, 5, 10, 4, 7, 9, 6],
     kind: "bar",
   },
   {
-    title: "Divergence alerts",
-    body: "Price goes one way, CVD goes another. Spots trapped traders before the bounce.",
-    spark: [10, 12, 9, 6, 8, 5, 3, 4],
+    title: "CVD overlaid on price",
+    body: "One pane, not two. CVD rides its own scale over the footprint chart, so a price/CVD divergence reads as two lines disagreeing — no cross-referencing needed.",
+    spark: [2, 4, 5, 9, 8, 12, 15, 14],
     kind: "line",
   },
   {
-    title: "Open interest (OI)",
-    body: "Total open futures contracts. Polled every 5 seconds from Binance API.",
+    title: "OI, Delta, CVD rows",
+    body: "Color-graded numeric rows under the chart, one column per bar, each with its own color language so the three signals never blend together.",
     spark: [5, 6, 5, 7, 8, 8, 9, 10],
     kind: "bar",
   },
   {
-    title: "Free, no auth",
-    body: "Install once. Works offline. No account, no API key, no signup needed.",
+    title: "Binance + TradingView",
+    body: "Symbol detected from the URL on Binance, from the tab title on TradingView. Same data pipeline either way — Binance's own REST API, not TradingView's.",
+    spark: [4, -2, 6, -3, 8, 3, -1, 7],
+    kind: "bar",
+  },
+  {
+    title: "Free, works offline",
+    body: "Install once. No account, no API key, no telemetry. Panel state survives a service-worker restart via session storage.",
     spark: [1, 1, 1, 1, 1, 1, 1, 1],
     kind: "line",
   },
@@ -92,7 +92,7 @@ export default function Features() {
             Everything traders need
           </h2>
           <p className="text-[15px] text-muted leading-[1.65] max-w-[520px] m-0">
-            Real-time order flow metrics synced directly to Binance Futures. See trapped traders before they liquidate.
+            Real-time order flow synced to Binance and TradingView. Spot a trap forming, not just the liquidation after it fires.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-reveal>

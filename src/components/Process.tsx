@@ -6,13 +6,13 @@ const STEPS = [
   },
   {
     n: "02",
-    title: "Open Binance Futures",
-    body: "Navigate to any futures pair. HORUS auto-injects bottom-right within seconds.",
+    title: "Open Binance or TradingView",
+    body: "Navigate to any futures pair. HORUS auto-injects bottom-right, backfilled with real bars, not empty.",
   },
   {
     n: "03",
     title: "Read the flow",
-    body: "Watch bars build live. Divergence flags the moment before price moves.",
+    body: "Watch a trap form, then confirm — or divergence flags the moment before price moves.",
   },
 ] as const;
 

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const TABS = ["Panel Preview", "Delta Chart", "CVD Tracker"] as const;
+const TABS = ["Panel Preview", "Trap Detector", "Delta Chart", "CVD Tracker"] as const;
 
 const FEED = [
   "0.42 BTC buy @ 66,171.20",
@@ -116,6 +116,81 @@ function PanelPreview() {
               />
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function useTrapPhase() {
+  const [phase, setPhase] = useState<"forming" | "confirmed">("forming");
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setPhase((p) => (p === "forming" ? "confirmed" : "forming")), 3500);
+    return () => clearInterval(id);
+  }, []);
+  return phase;
+}
+
+function TrapDetectorDemo() {
+  const phase = useTrapPhase();
+  const confirmed = phase === "confirmed";
+
+  return (
+    <div className="card-elevated bg-paper rounded-card overflow-hidden">
+      <div
+        className="py-[10px] px-[14px] flex justify-between items-center transition-colors duration-500"
+        style={{ background: confirmed ? "#f87171" : "var(--accent)" }}
+      >
+        <div
+          className="text-[12px] font-semibold font-mono flex items-center gap-[6px] transition-colors duration-500"
+          style={{ color: confirmed ? "#fff" : "var(--accent-ink)" }}
+        >
+          <span
+            className="size-[6px] rounded-full"
+            style={{ background: confirmed ? "#fff" : "var(--accent-ink)", animation: "epblink 1.6s infinite" }}
+          />
+          Trap Detector
+        </div>
+        <span
+          className="text-[9px] font-mono px-[7px] py-[2px] rounded-sm uppercase transition-colors duration-500"
+          style={{ background: "rgba(0,0,0,0.15)", color: confirmed ? "#fff" : "var(--accent-ink)" }}
+        >
+          {confirmed ? "confirmed" : "forming"}
+        </span>
+      </div>
+      <div className="bg-term-bg px-4 py-4 font-mono text-[11px] leading-[2]" style={{ minHeight: 250, color: "var(--term-text)" }}>
+        <div style={{ color: "var(--term-dim)" }}># Longs trapped @ 66,212.90 (swing high)</div>
+        <br />
+        <div className="flex items-center gap-[10px] mb-1">
+          <span style={{ color: "var(--term-dim)", width: 56, display: "inline-block" }}>Location</span>
+          <span style={{ color: "var(--pos)" }}>✓ at swing extreme</span>
+        </div>
+        <div className="flex items-center gap-[10px] mb-1">
+          <span style={{ color: "var(--term-dim)", width: 56, display: "inline-block" }}>OI</span>
+          <span className="transition-colors duration-500" style={{ color: confirmed ? "var(--neg)" : "var(--pos)" }}>
+            {confirmed ? "↓ falling — positions closing" : "↑ rising — fresh longs chasing"}
+          </span>
+        </div>
+        <div className="flex items-center gap-[10px] mb-4">
+          <span style={{ color: "var(--term-dim)", width: 56, display: "inline-block" }}>Delta</span>
+          <span className="transition-colors duration-500" style={{ color: confirmed ? "var(--neg)" : "var(--pos)" }}>
+            {confirmed ? "-18.40 BTC (selling)" : "+22.10 BTC (buying)"}
+          </span>
+        </div>
+        <div
+          className="px-3 py-2 rounded-sm transition-colors duration-500"
+          style={{
+            background: confirmed ? "rgba(248,113,113,0.12)" : "rgba(213,241,6,0.08)",
+            border: `1px solid ${confirmed ? "#f87171" : "var(--accent-border)"}`,
+          }}
+        >
+          {confirmed
+            ? "🩸 Squeeze confirmed — longs closing, expect continuation down"
+            : "🪤 Longs opening at top — watch for the squeeze"}
+        </div>
+        <div className="mt-3" style={{ color: "var(--term-dim)", fontSize: 9 }}>
+          # A trap that never confirms within the window is dropped silently — no false alarm shown.
         </div>
       </div>
     </div>
@@ -290,7 +365,7 @@ export default function Demo() {
             What you&apos;ll see
           </h2>
           <p className="text-[15px] text-muted leading-[1.65] max-w-[520px] m-0">
-            Real-time order flow data in the HORUS panel. Three core views: live metrics, delta histogram, and divergence alerts.
+            Real-time order flow data in the HORUS panel — live metrics, the two-phase trap detector, delta histogram, and CVD tracking.
           </p>
         </div>
 
@@ -320,6 +395,7 @@ export default function Demo() {
           }}
         >
           {activeTab === "Panel Preview" && <PanelPreview />}
+          {activeTab === "Trap Detector" && <TrapDetectorDemo />}
           {activeTab === "Delta Chart" && <DeltaChart />}
           {activeTab === "CVD Tracker" && <CVDTracker />}
         </div>

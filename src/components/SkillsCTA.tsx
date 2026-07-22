@@ -1,14 +1,14 @@
 const FEATURES = [
+  "Trap Detector",
+  "Squeeze Confirm",
+  "Footprint Chart",
+  "CVD Overlay",
   "Delta",
-  "CVD",
   "Open Interest",
-  "Footprint",
   "Divergence",
-  "Real-time",
-  "Live Charts",
-  "Price Levels",
-  "Buy/Sell Split",
-  "Trapped Traders",
+  "Binance",
+  "TradingView",
+  "Historical Annotations",
 ];
 
 export default function SkillsCTA() {
