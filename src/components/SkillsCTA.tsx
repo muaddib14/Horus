@@ -18,7 +18,7 @@ export default function SkillsCTA() {
         <div className="grid grid-cols-[1fr_auto] gap-12 items-center" data-reveal>
           <div>
             <div className="text-[11px] font-mono font-medium tracking-[.14em] uppercase text-ink mb-[14px]">
-              // Open Source
+              {"// Open Source"}
             </div>
             <h2 className="font-mono font-semibold tracking-[-.01em] text-ink m-0 leading-[1.05]" style={{ fontSize: "clamp(32px, 4.5vw, 48px)" }}>
               Free. <em className="italic text-ink">No tracking.</em>
