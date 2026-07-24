@@ -35,6 +35,19 @@ export default function Nav() {
       </div>
       <div className="flex items-center gap-3">
         <a
+          href="https://pump.fun/coin/G7fKnj922xVupqZgKwCAk7UmBE5TjbNTrzconXW3pump"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View $HORUS on pump.fun"
+          className="text-[12px] font-semibold px-5 py-[9px] rounded-pill flex items-center gap-[6px] tracking-[.01em] transition-colors duration-150 hidden md:flex no-underline"
+          style={{ border: "1px solid var(--accent-border)", color: "var(--accent-text)" }}
+        >
+          $HORUS on pump.fun
+          <svg width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <path d="M7 17L17 7M7 7h10v10"></path>
+          </svg>
+        </a>
+        <a
           href="https://github.com/muaddib14/Horus-Extension/releases/latest"
           target="_blank"
           rel="noopener noreferrer"
@@ -74,6 +87,18 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
+          <a
+            href="https://pump.fun/coin/G7fKnj922xVupqZgKwCAk7UmBE5TjbNTrzconXW3pump"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[13px] font-semibold px-5 py-[10px] rounded-md text-center no-underline flex items-center justify-center gap-[6px]"
+            style={{ border: "1px solid var(--accent-border)", color: "var(--accent-text)" }}
+          >
+            $HORUS on pump.fun
+            <svg width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <path d="M7 17L17 7M7 7h10v10"></path>
+            </svg>
+          </a>
           <a
             href="https://github.com/muaddib14/Horus-Extension/releases/latest"
             target="_blank"
